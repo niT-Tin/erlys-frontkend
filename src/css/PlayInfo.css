@@ -1,0 +1,27 @@
+.col1{
+    position: absolute;
+    left: 0px;
+    top: 50px;
+}
+
+.col2{
+    position: absolute;
+    left: 160px;
+    top: 50px;
+}
+
+.col3{
+    position: absolute;
+    top: 50px;
+    left: 340px;
+}
+
+.col4{
+    position: absolute;
+    top: 50px;
+    left: 540px;
+}
+/* .infotable{
+    position: absolute;
+    left: 0px;
+} */
