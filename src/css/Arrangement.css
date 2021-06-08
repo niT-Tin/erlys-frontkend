@@ -1,0 +1,49 @@
+.bk{
+    display: flex;
+}
+
+.demonstration{
+    position: relative;
+    float: bottom;
+    margin-bottom: 20px;
+    left: 50px;
+}
+
+.tp{
+    position: relative;
+    top:50px;
+    left:-70px;
+}
+
+.datesetor{
+    position: relative;
+    left: 200px;
+}
+
+.arm{
+    position: relative;
+    top:80px;
+    left:180px;
+}
+
+.arm-title{
+    position: relative;
+    top:-10px;
+    left:-60px;
+}
+
+.setb{
+    position: relative;
+    top:100px;
+    left:170px;
+}
+
+.arop{
+    width: 220px;
+}
+
+.mysubmit{
+    position: relative;
+    top:100px;
+    left:180px;
+}
