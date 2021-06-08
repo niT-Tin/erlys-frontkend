@@ -70,15 +70,21 @@ export default {
         .catch((_) => {});
     },
     toData: function () {
+      let roless = ["admin", "referee"];
       let users = qs.stringify({
         account: this.users1.account,
         password: this.users1.password,
       });
       this.instance1
-        .post("/welogin", users)
+        .post("/login", users)
         .then((result) => {
-          if (result.data == 200) {
+          if (result.data != null) {
               //TODO 页面跳转
+              if (result.data.roles == roless[0]){
+                this.$router.push({name: "AAdapter"});
+              }else if (result.data.roles == roless[1]){
+                this.$router.push({name: "Radapter"});
+              }
               console.log("成功")
           } else {
               this.dialogVisible = true;
@@ -94,7 +100,7 @@ export default {
   created() {
     //   this.show2 = !this.show2
     this.instance1 = axios.create({
-      baseURL: "http://42.193.103.150:8082/flexq1/api",
+      baseURL: "http://hk4top.top/flexq/api",
       timeout: 10000,
     });
   },
