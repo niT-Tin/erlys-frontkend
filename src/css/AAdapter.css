@@ -1,0 +1,93 @@
+.bgk{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    right: 100px;
+    bottom: 0px;
+    /* bor
+    der-top: 1px solid; */
+}
+
+.images{
+    border-radius: 20px;
+    height: 190px;
+}
+
+.itemss{
+    border-radius: 20px;
+    height: 190px;
+}
+
+.rol{
+    position: absolute;
+    top: -20px;
+    width: 800px;
+    left: 520px;
+}
+
+
+.title-div{
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #888888;
+}
+
+.title{
+    position: relative;
+    top: 35px;
+    left: 0px;
+    font-weight: bold;
+}
+
+.title-b{
+    /* width: 100%; */
+    border-radius: 20px;
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 1%, #FF5ACD 47%, #ffffff 100%);
+
+}
+
+.el-tables__content{
+    position: relative;
+    width: 900px;
+    height: 400px;
+}
+
+.title-line{
+    position: absolute;
+    left: 90px;
+    font-size: 10px;
+}
+
+.title-img{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    /* position: absolute; */
+    top: -10px;
+    left: -265px;
+}
+
+.el-tabs__item.is-active{
+    color: rgb(255, 255, 255);
+    background-color: white;
+}
+
+.el-tabs__item {
+
+    border-radius: 10px;
+    background-color: #FF9A8B;
+    /* background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%); */
+}
+
+.navbar{
+
+    border-radius: 20px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+   
+
+    /* height: 20px; */
+    /* font-size: 20px; */
+}
