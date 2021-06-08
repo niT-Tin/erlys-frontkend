@@ -1,0 +1,13 @@
+.cls {
+    display: flex;
+  }
+  
+  .radiobs{
+    float: bottom;
+    margin-bottom: 10px;
+  }
+  
+  .demo-input-size {
+    width: 300px;
+    float: left;
+  }
