@@ -65,11 +65,11 @@ export default {
   },
   created() {
     this.instance1 = axios.create({
-      baseURL: "http://maymyday.top/flexq/api",
+      baseURL: "http://hk4top.top/flexq/api",
       timeout: 10000,
     });
     this.instance1
-      .get("/getallUserinfo")
+      .get("/getallplayerinfo")
       .then((result) => {
         this.userinfos = result.data;
         this.total1 = result.data.length;
