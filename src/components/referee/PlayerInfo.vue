@@ -59,7 +59,7 @@ export default {
     this.instance1
       .get("/getallplayerinfo")
       .then((result) => {
-        this.userinfos = result.data;
+        this.userinfos = result.data.userinfoList;
         this.total1 = result.data.length;
         console.log(this.userinfos);
       })

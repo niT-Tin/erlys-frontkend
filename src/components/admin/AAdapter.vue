@@ -18,13 +18,13 @@
     <div class="navbar">
       <el-tabs type="border-card">
         <el-tab-pane  label="队员信息">
-          <PlayerInfo/>
+          <PlayerInfo :token="token"/>
         </el-tab-pane>
         <el-tab-pane label="赛程安排" >
-          <Arrangement/>
+          <Arrangement :token="token"/>
         </el-tab-pane>
         <el-tab-pane label="裁判信息">
-           <RefereeInfo/>
+           <RefereeInfo :token="token"/>
         </el-tab-pane>
       </el-tabs>
     </div>
@@ -38,11 +38,13 @@ import qs from "qs";
 import Arrangement from './Arrangement'
 import PlayerInfo from './PlayerInfo'
 import RefereeInfo from './RefereeInfo'
+import Msg from '../msg'
 
 export default {
   components: {Arrangement, PlayerInfo, RefereeInfo},
     data(){
       return {
+        token: '',
          pics: [
         {id:0, idview: '../../../static/headers/1.jpg'},
         {id:1, idview: '../../../static/headers/2.jpg'},
@@ -58,8 +60,11 @@ export default {
     methods: {
 
     },
+    created(){
+        this.token = this.$route.query.token;
+    },
     mounted: function(){
-
+        
     }
 }
 </script>

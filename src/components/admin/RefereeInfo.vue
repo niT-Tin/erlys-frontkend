@@ -16,18 +16,23 @@ import axios from "axios";
 export default {
   data() {
     return {
+      token: "",
       userinfos: [],
     };
   },
+  props:['token'],
   created() {
     this.instance1 = axios.create({
-      baseURL: "http://hk4top.top/flexq/api",
+      baseURL: "http://localhost:80/flexq/api",
       timeout: 10000,
+      headers:{
+        token: this.token
+      }
     });
     this.instance1
       .get("/getallrefereeinfo")
       .then((result) => {
-        this.userinfos = result.data;
+        this.userinfos = result.data.userinfoList;
         this.total1 = result.data.length;
         console.log(this.userinfos);
       })
