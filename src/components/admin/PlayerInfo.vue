@@ -27,7 +27,6 @@ import Msg from "../msg";
 export default {
   data() {
     return {
-      token: '',
       userinfos: [],
     };
   },

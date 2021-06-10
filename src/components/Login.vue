@@ -84,10 +84,10 @@ export default {
               // console.log(result.data.token)
               if (result.data.userInfo.roles == roless[0]){
                 // Msg.$emit("token",result.data.token);
-                this.$router.push({query:{token:result.data.token}, name: "AAdapter"});
+                this.$router.push({name: "AAdapter"});
               }else if (result.data.userInfo.roles == roless[1]){
                 // Msg.$emit("token",result.data.token);
-                this.$router.push({query:{token:result.data.token},name: "Radapter"});
+                this.$router.push({name: "Radapter"});
               }
               // console.log("成功")
           } else {
