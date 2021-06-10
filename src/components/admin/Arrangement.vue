@@ -55,6 +55,7 @@
       >
       <el-button type="primary" class="reset" @click="clear">重置</el-button>
     </div>
+    <!-- <div>{{this.activities}}</div> -->
   </div>
 </template>
 <script>
@@ -127,31 +128,14 @@ export default {
       value1: "",
       value2: "",
       value3: "",
-      activities: [
-        {
-          content: "待设置",
-          timestamp: "2018-04-12 20:46",
-          size: "small",
-          type: "primary",
-          icon: "el-icon-more",
-        },
-        {
-          content: "待设置",
-          timestamp: "2018-04-03 20:46",
-          color: "#0bbd87",
-        },
-        {
-          content: "待设置",
-          timestamp: "2018-04-03 20:46",
-          size: "large",
-        },
-        {
-          content: "待设置",
-          timestamp: "2018-04-03 20:46",
-        },
-      ],
+      activities: [],
     };
   },
+
+  beforeMount(){
+      
+  },
+
   created() {
     var instance = axios.create({
       baseURL: "http://localhost:80/flexq/api",
@@ -164,28 +148,44 @@ export default {
       .get("http://localhost:80/flexq/api/getarrangement")
       .then((result) => {
         // console.log(result.data.arrangementList);
+        // let a = {};
         var i;
         for (i in result.data.arrangementList) {
-          this.activities[i].content = result.data.arrangementList[i].time;
-          this.activities[i].timestamp =
-            result.data.arrangementList[i].schedule;
-          // console.log(result.data.arrangementList[i].time);
-          // console.log(result.data.arrangementList[i].schedule);
+          let a = {};
+          a.content = result.data.arrangementList[i].schedule;
+          a.timestamp =
+            result.data.arrangementList[i].time;
+          a.size = "medium";
+          a.type = "primary";
+          a.icon = "el-icon-more"
+          this.activities.push(a);
         }
       });
+      console.log(this.activities);
+      // console.log(this.activities)
   },
-  mounted: function () {},
+  mounted: function () {
+    // console.log(this.activities)
+    
+  },
   methods: {
     clear: function () {
       this.thing = "";
       this.count = 0;
       this.count1 = 0;
       this.RqObject.arrangementList = [];
-
-      var ite;
-      for (ite in this.activities) {
-        this.activities[ite].content = "待设置";
-        this.activities[ite].timestamp = "1949-10-1 15:00";
+      let tp = {};
+      // var i = 0;
+      var ite = this.activities.length;
+      this.activities = [];
+      // this.activities
+      for (var i = 0;i < ite; i++) {
+        tp.content = "待设置";
+        tp.timestamp = "1949-10-1 15:00";
+        tp.size = "medium";
+        tp.type = "primary";
+        tp.icon = "el-icon-more";
+        this.activities.push(tp);
       }
 
       const h = this.$createElement;
@@ -228,8 +228,17 @@ export default {
         message: h("i", { style: "color: teal" }, "设置赛程成功"),
         position: "top-left",
       });
-      this.activities[this.count1].content = this.thing;
-      this.activities[this.count1].timestamp = this.value2 + "";
+      console.log(this.count1)
+      let sig ={};
+      sig.size = "medium";
+      sig.type = "primary";
+      sig.icon = "el-icon-more";
+      sig.content = this.thing;
+      sig.timestamp = this.value2;
+      this.activities.unshift(sig);
+      this.activities.pop();
+      // this.activities[this.count1].content = this.thing;
+      // this.activities[this.count1] + "";
       this.count1++;
     },
     cmit: function () {
