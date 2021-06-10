@@ -26,6 +26,12 @@
     left:180px;
 }
 
+.reset{
+    position: relative;
+    left:200px;
+    top:100px;
+}
+
 .arm-title{
     position: relative;
     top:-10px;
