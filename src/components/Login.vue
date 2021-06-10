@@ -79,15 +79,15 @@ export default {
       this.instance1
         .post("/login", users)
         .then((result) => {
-          if (result.data != null) {
+          if (result.data.status != 401) {
               //TODO 页面跳转
               // console.log(result.data.token)
               if (result.data.userInfo.roles == roless[0]){
                 // Msg.$emit("token",result.data.token);
-                this.$router.push({name: "AAdapter"});
+                this.$router.push({query:{token:result.data.token}, name: "AAdapter"});
               }else if (result.data.userInfo.roles == roless[1]){
                 // Msg.$emit("token",result.data.token);
-                this.$router.push({name: "Radapter"});
+                this.$router.push({query:{token:result.data.token},name: "Radapter"});
               }
               // console.log("成功")
           } else {
