@@ -65,19 +65,6 @@ export default {
     };
   },
   methods: {
-    getArr: function () {
-        var instance = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
-        timeout: 10000,
-        headers: {
-          token: this.token
-        }
-      });
-      instance.get('http://localhost:80/flexq/api/getarrangement').then((result) => {
-        console.log(result.data.arrangementList);
-      })
-      
-    },
   },
   created() {
     this.token = this.$route.query.token;

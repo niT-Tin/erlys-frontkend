@@ -163,14 +163,14 @@ export default {
     instance
       .get("http://localhost:80/flexq/api/getarrangement")
       .then((result) => {
-        console.log(result.data.arrangementList);
+        // console.log(result.data.arrangementList);
         var i;
         for (i in result.data.arrangementList) {
           this.activities[i].content = result.data.arrangementList[i].time;
           this.activities[i].timestamp =
             result.data.arrangementList[i].schedule;
-          console.log(result.data.arrangementList[i].time);
-          console.log(result.data.arrangementList[i].schedule);
+          // console.log(result.data.arrangementList[i].time);
+          // console.log(result.data.arrangementList[i].schedule);
         }
       });
   },
