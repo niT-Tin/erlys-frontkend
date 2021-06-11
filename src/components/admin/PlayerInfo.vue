@@ -118,7 +118,7 @@ export default {
     get1: function (row) {
       this.handleClick(row);
       var instance = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
+        baseURL: "http://hk4top.top:80/flexq/api",
         timeout: 10000,
         headers: {
           token: this.token,

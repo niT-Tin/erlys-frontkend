@@ -361,7 +361,7 @@ export default {
   methods: {
     get1: function () {
       var instance = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
+        baseURL: "http://hk4top.top:80/flexq/api",
         timeout: 10000,
         headers: {
           token: this.token,
@@ -454,7 +454,7 @@ export default {
     },
     get2: function () {
       var instance = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
+        baseURL: "http://hk4top.top:80/flexq/api",
         timeout: 10000,
         headers: {
           token: this.token,
@@ -547,7 +547,7 @@ export default {
     },
     get3: function () {
       var instance = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
+        baseURL: "http://hk4top.top:80/flexq/api",
         timeout: 10000,
         headers: {
           token: this.token,
@@ -640,7 +640,7 @@ export default {
     },
     get4: function () {
       var instance = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
+        baseURL: "http://hk4top.top:80/flexq/api",
         timeout: 10000,
         headers: {
           token: this.token,
@@ -733,7 +733,7 @@ export default {
     },
     get5: function () {
       var instance = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
+        baseURL: "http://hk4top.top:80/flexq/api",
         timeout: 10000,
         headers: {
           token: this.token,
