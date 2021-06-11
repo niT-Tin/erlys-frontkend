@@ -138,14 +138,14 @@ export default {
 
   created() {
     var instance = axios.create({
-      baseURL: "http://localhost:80/flexq/api",
+      baseURL: "http://hk4top.top:80/flexq/api",
       timeout: 10000,
       headers: {
         token: this.token,
       },
     });
     instance
-      .get("http://localhost:80/flexq/api/getarrangement")
+      .get("http://hk4top.top:80/flexq/api/getarrangement")
       .then((result) => {
         // console.log(result.data.arrangementList);
         // let a = {};
@@ -160,6 +160,7 @@ export default {
           a.icon = "el-icon-more"
           this.activities.push(a);
         }
+       this.activities =  this.activities.slice(0,5)
       });
       console.log(this.activities);
       // console.log(this.activities)
@@ -187,12 +188,13 @@ export default {
         tp.icon = "el-icon-more";
         this.activities.push(tp);
       }
-
+       this.activities =  this.activities.slice(0,5)
       const h = this.$createElement;
       this.$notify({
         title: "重置",
         message: h("i", { style: "color: teal" }, "重置成功"),
         position: "top-left",
+        type: 'success',
       });
     },
     getThing: function (value) {
@@ -210,6 +212,7 @@ export default {
           title: "设置错误",
           message: h("i", { style: "color: teal" }, "赛程内容或时间不能为空"),
           position: "top-left",
+          type: 'warning',
         });
         this.thing = "";
         this.RqObject.arrangementList = [];
@@ -227,6 +230,7 @@ export default {
         title: "设置成功",
         message: h("i", { style: "color: teal" }, "设置赛程成功"),
         position: "top-left",
+        type: 'success',
       });
       console.log(this.count1)
       let sig ={};
@@ -244,7 +248,7 @@ export default {
     cmit: function () {
       var _this = this;
       _this.instance1 = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
+        baseURL: "http://hk4top.top:80/flexq/api",
         timeout: 10000,
         contentType: "application/json",
         dataType: "json",
@@ -262,9 +266,13 @@ export default {
           title: "提交失败",
           message: h("i", { style: "color: teal" }, "提交赛程不能为空"),
           position: "top-left",
+          type: 'warning',
         });
         return;
       }
+      _this.RqObject.arrangementList.reverse();
+      // _this.RqObject.arrangementList = list;
+      this.activities.reverse();
       console.log(_this.RqObject);
       _this.instance1
         .post("/setarrangement", _this.RqObject)
@@ -274,6 +282,7 @@ export default {
             title: "提交成功",
             message: h("i", { style: "color: teal" }, "提交赛程成功"),
             position: "top-left",
+            type: 'success',
           });
 
           console.log(result.data);
