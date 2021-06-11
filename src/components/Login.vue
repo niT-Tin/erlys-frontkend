@@ -104,7 +104,7 @@ export default {
   created() {
     //   this.show2 = !this.show2
     this.instance1 = axios.create({
-      baseURL: "http://localhost:80/flexq/api",
+      baseURL: "http://hk4top.top:80/flexq/api",
       timeout: 10000,
     });
   },

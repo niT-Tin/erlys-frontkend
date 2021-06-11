@@ -22,7 +22,7 @@ export default {
   props:['token'],
   created() {
     this.instance1 = axios.create({
-      baseURL: "http://localhost:80/flexq/api",
+      baseURL: "http://hk4top.top:80/flexq/api",
       timeout: 10000,
       headers:{
         token: this.token

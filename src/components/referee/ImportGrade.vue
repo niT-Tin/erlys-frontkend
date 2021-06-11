@@ -303,7 +303,9 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
+  props:['token'],
   data() {
     return {
         instance1: null,
@@ -353,13 +355,13 @@ export default {
 
   },
 
-    mounted: function(){
+    mounted(){
 
     },
 
   created(){
         this.instance1 = axios.created({
-            baseUrl: "http://maymyday.top/flexq1/api",
+            baseUrl: "http://hk4top.top/flexq1/api",
             timeout: 10000,
         });
     }

@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="navbar">
-        <el-tabs type="border-card" >
+        <el-tabs type="border-card">
           <el-tab-pane label="队员信息" >
             <PlayerInfo :token="token" />
           </el-tab-pane>

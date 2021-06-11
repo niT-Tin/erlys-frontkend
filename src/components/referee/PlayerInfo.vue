@@ -45,16 +45,20 @@
 <script>
 import axios from 'axios'
 export default {
+  props:['token'],
     data (){
 
       return{
-        userinfos:'',
+        userinfos:[],
       }
     },
     created(){
       this.instance1 = axios.create({
-      baseURL: "http://hk4top.top/flexq/api",
+      baseURL: "http://hk4top.top:80/flexq/api",
       timeout: 10000,
+      headers:{
+        token: this.token,
+      }
     });
     this.instance1
       .get("/getallplayerinfo")

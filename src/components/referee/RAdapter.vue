@@ -21,13 +21,13 @@
         <div class="navbar">
           <el-tabs type="border-card">
             <el-tab-pane label="队员信息">
-              <UserInfo />
+              <UserInfo :token="token"/>
             </el-tab-pane>
             <el-tab-pane label="赛程安排">
-              <Arrangement />
+              <Arrangement :token="token"/>
             </el-tab-pane>
             <el-tab-pane label="成绩录入">
-              <ImportGrade />
+              <ImportGrade :token="token"/>
             </el-tab-pane>
           </el-tabs>
         </div>
@@ -59,7 +59,9 @@ export default {
   },
   methods: {},
   mounted: function () {},
-  created() {},
+  created() {
+    this.token = this.$route.query.token;
+  },
 };
 </script>
 
