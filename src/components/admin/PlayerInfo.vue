@@ -131,6 +131,23 @@ export default {
       console.log(_this.RqObject);
       instance.post('/updateplayerinfo', _this.RqObject).then((res)=>{
         console.log(res.data)
+        if(res.data.status == 200){
+          const h = this.$createElement;
+        this.$notify({
+          title: "提交修改成功",
+          message: h("i", { style: "color: teal" }, ""),
+          position: "top-left",
+          type: 'success',
+        });
+        }else{
+          const h = this.$createElement;
+        this.$notify({
+          title: "提交修改失败",
+          message: h("i", { style: "color: teal" }, ""),
+          position: "top-left",
+          type: 'warning',
+        });
+        }
       })
       // this.open(row);
     },
