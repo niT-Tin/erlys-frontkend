@@ -430,7 +430,7 @@ export default {
                 position: "top-left",
                 type: "success",
               });
-              this.name1 = '';
+              // this.name1 = '';
               this.RqObject.scores = [],
               this.RqObject.sc = 0;
               sc = 0;
@@ -533,7 +533,7 @@ export default {
                 position: "top-left",
                 type: "success",
               });
-              this.name2 = '';
+              // this.name2 = '';
               this.RqObject.scores = [],
               this.RqObject.sc = 0;
               sc = 0;
@@ -636,7 +636,7 @@ export default {
                 position: "top-left",
                 type: "success",
               });
-              this.name3 = '';
+              // this.name3 = '';
               this.RqObject.scores = [],
               this.RqObject.sc = 0;
               sc = 0;
@@ -739,7 +739,7 @@ export default {
                 position: "top-left",
                 type: "success",
               });
-              this.name4 = '';
+              // this.name4 = '';
               this.RqObject.scores = [],
               this.RqObject.sc = 0;
               sc = 0;
@@ -842,7 +842,7 @@ export default {
                 position: "top-left",
                 type: "success",
               });
-              this.name5 = '';
+              // this.name5 = '';
               this.RqObject.scores = [],
               this.RqObject.sc = 0;
               sc = 0;
