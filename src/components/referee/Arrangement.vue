@@ -23,30 +23,7 @@ export default {
   props:['token'],
   data() {
     return {
-     
-      activities: [
-        {
-          content: "单人赛",
-          timestamp: "2018-04-12 20:46",
-          size: "small",
-          type: "primary",
-          icon: "el-icon-more",
-        },
-        {
-          content: "双人混合贝克赛",
-          timestamp: "2018-04-03 20:46",
-          color: "#0bbd87",
-        },
-        {
-          content: "三人赛",
-          timestamp: "2018-04-03 20:46",
-          size: "large",
-        },
-        {
-          content: "全能赛",
-          timestamp: "2018-04-03 20:46",
-        },
-      ],
+      activities: [],
     };
   },
   created(){
@@ -61,15 +38,21 @@ export default {
       .get("http://hk4top.top:80/flexq/api/getarrangement")
       .then((result) => {
         // console.log(result.data.arrangementList);
+        // let a = {};
         var i;
         for (i in result.data.arrangementList) {
-          this.activities[i].content = result.data.arrangementList[i].time;
-          this.activities[i].timestamp =
-            result.data.arrangementList[i].schedule;
-          // console.log(result.data.arrangementList[i].time);
-          // console.log(result.data.arrangementList[i].schedule);
+          let a = {};
+          a.content = result.data.arrangementList[i].schedule;
+          a.timestamp =
+            result.data.arrangementList[i].time;
+          a.size = "medium";
+          a.type = "primary";
+          a.icon = "el-icon-more"
+          this.activities.push(a);
         }
+       this.activities =  this.activities.slice(0,5)
       });
+      console.log(this.activities);
   },
 };
 </script>
