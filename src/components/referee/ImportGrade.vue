@@ -430,6 +430,16 @@ export default {
                 position: "top-left",
                 type: "success",
               });
+              this.name1 = '';
+              this.RqObject.scores = [],
+              this.RqObject.sc = 0;
+              sc = 0;
+              this.input1 = '';
+              this.input2 = '';
+              this.input3 = '';
+              this.input4 = '';
+              this.input5 = '';
+              this.input6 = '';
             } else {
               const h = this.$createElement;
               this.$notify({
@@ -523,6 +533,16 @@ export default {
                 position: "top-left",
                 type: "success",
               });
+              this.name2 = '';
+              this.RqObject.scores = [],
+              this.RqObject.sc = 0;
+              sc = 0;
+              this.input11 = '';
+              this.input22 = '';
+              this.input33 = '';
+              this.input44 = '';
+              this.input55 = '';
+              this.input66 = '';
             } else {
               const h = this.$createElement;
               this.$notify({
@@ -616,6 +636,16 @@ export default {
                 position: "top-left",
                 type: "success",
               });
+              this.name3 = '';
+              this.RqObject.scores = [],
+              this.RqObject.sc = 0;
+              sc = 0;
+              this.input111 = '';
+              this.input222 = '';
+              this.input333 = '';
+              this.input444 = '';
+              this.input555 = '';
+              this.input666 = '';
             } else {
               const h = this.$createElement;
               this.$notify({
@@ -709,6 +739,16 @@ export default {
                 position: "top-left",
                 type: "success",
               });
+              this.name4 = '';
+              this.RqObject.scores = [],
+              this.RqObject.sc = 0;
+              sc = 0;
+              this.input1111 = '';
+              this.input2222 = '';
+              this.input3333 = '';
+              this.input4444 = '';
+              this.input5555 = '';
+              this.input6666 = '';
             } else {
               const h = this.$createElement;
               this.$notify({
@@ -802,6 +842,16 @@ export default {
                 position: "top-left",
                 type: "success",
               });
+              this.name5 = '';
+              this.RqObject.scores = [],
+              this.RqObject.sc = 0;
+              sc = 0;
+              this.input11111 = '';
+              this.input22222 = '';
+              this.input33333 = '';
+              this.input44444 = '';
+              this.input55555 = '';
+              this.input66666 = '';
             } else {
               const h = this.$createElement;
               this.$notify({
