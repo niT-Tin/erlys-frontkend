@@ -310,8 +310,8 @@ export default {
   props: ["token"],
   data() {
     return {
-      RqObject:{
-        scores:[],
+      RqObject: {
+        scores: [],
         sc: 0,
         name: "",
       },
@@ -388,24 +388,67 @@ export default {
           sc = 7;
           break;
       }
+      if(this.name1 == '' || this.name1 == null){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "名字不能为空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
+      if(this.input1 == '' || this.input2 == '' || this.input3 =='',
+      this.input4 == '' || this.input5 == '' || this.input6 == ''){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "成绩框不能有空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
       instance.post("/foneuserinfobyname", this.name1).then((res) => {
         console.log(res.data);
         if (res.data.userInfo.name != "" || res.data.userInfo.name != null) {
-          this.RqObject.scores.push(Number(this.input1))
-          this.RqObject.scores.push(Number(this.input2))
-          this.RqObject.scores.push(Number(this.input3))
-          this.RqObject.scores.push(Number(this.input4))
-          this.RqObject.scores.push(Number(this.input5))
-          this.RqObject.scores.push(Number(this.input6))
+          this.RqObject.scores.push(Number(this.input1));
+          this.RqObject.scores.push(Number(this.input2));
+          this.RqObject.scores.push(Number(this.input3));
+          this.RqObject.scores.push(Number(this.input4));
+          this.RqObject.scores.push(Number(this.input5));
+          this.RqObject.scores.push(Number(this.input6));
           this.RqObject.sc = sc;
           this.RqObject.name = this.name1;
-          console.log(this.RqObject)
-          instance.post(
-            "/insertm",
-            this.RqObject
-          ).then(res=>{
+          console.log(this.RqObject);
+          instance.post("/insertm", this.RqObject).then((res) => {
+            if (res.data.status == 200) {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入成功"),
+                position: "top-left",
+                type: "success",
+              });
+            } else {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入失败"),
+                position: "top-left",
+                type: "warning",
+              });
+            }
             console.log(res);
           });
+        }else{
+          const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "查无此人"),
+                position: "top-left",
+                type: "warning",
+              });
         }
       });
     },
@@ -438,24 +481,67 @@ export default {
           sc = 7;
           break;
       }
+      if(this.name2 == '' || this.name2 == null){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "名字不能为空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
+      if(this.input11 == '' || this.input22 == '' || this.input33 =='',
+      this.input44 == '' || this.input55 == '' || this.input66 == ''){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "成绩框不能有空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
       instance.post("/foneuserinfobyname", this.name2).then((res) => {
         console.log(res.data);
         if (res.data.userInfo.name != "" || res.data.userInfo.name != null) {
-          this.RqObject.scores.push(Number(this.input11))
-          this.RqObject.scores.push(Number(this.input22))
-          this.RqObject.scores.push(Number(this.input33))
-          this.RqObject.scores.push(Number(this.input44))
-          this.RqObject.scores.push(Number(this.input55))
-          this.RqObject.scores.push(Number(this.input66))
+          this.RqObject.scores.push(Number(this.input11));
+          this.RqObject.scores.push(Number(this.input22));
+          this.RqObject.scores.push(Number(this.input33));
+          this.RqObject.scores.push(Number(this.input44));
+          this.RqObject.scores.push(Number(this.input55));
+          this.RqObject.scores.push(Number(this.input66));
           this.RqObject.sc = sc;
           this.RqObject.name = this.name2;
-          console.log(this.RqObject)
-          instance.post(
-            "/insertm",
-            this.RqObject
-          ).then(res=>{
+          console.log(this.RqObject);
+          instance.post("/insertm", this.RqObject).then((res) => {
+             if (res.data.status == 200) {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入成功"),
+                position: "top-left",
+                type: "success",
+              });
+            } else {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入失败"),
+                position: "top-left",
+                type: "warning",
+              });
+            }
             console.log(res);
           });
+        }else{
+          const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "查无此人"),
+                position: "top-left",
+                type: "warning",
+              });
         }
       });
     },
@@ -488,24 +574,67 @@ export default {
           sc = 7;
           break;
       }
+      if(this.name3 == '' || this.name3 == null){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "名字不能为空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
+      if(this.input111 == '' || this.input222== '' || this.input333 =='',
+      this.input444 == '' || this.input555 == '' || this.input666 == ''){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "成绩框不能有空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
       instance.post("/foneuserinfobyname", this.name3).then((res) => {
         console.log(res.data);
         if (res.data.userInfo.name != "" || res.data.userInfo.name != null) {
-          this.RqObject.scores.push(Number(this.input111))
-          this.RqObject.scores.push(Number(this.input222))
-          this.RqObject.scores.push(Number(this.input333))
-          this.RqObject.scores.push(Number(this.input444))
-          this.RqObject.scores.push(Number(this.input555))
-          this.RqObject.scores.push(Number(this.input666))
+          this.RqObject.scores.push(Number(this.input111));
+          this.RqObject.scores.push(Number(this.input222));
+          this.RqObject.scores.push(Number(this.input333));
+          this.RqObject.scores.push(Number(this.input444));
+          this.RqObject.scores.push(Number(this.input555));
+          this.RqObject.scores.push(Number(this.input666));
           this.RqObject.sc = sc;
           this.RqObject.name = this.name3;
-          console.log(this.RqObject)
-          instance.post(
-            "/insertm",
-            this.RqObject
-          ).then(res=>{
+          console.log(this.RqObject);
+          instance.post("/insertm", this.RqObject).then((res) => {
+             if (res.data.status == 200) {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入成功"),
+                position: "top-left",
+                type: "success",
+              });
+            } else {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入失败"),
+                position: "top-left",
+                type: "warning",
+              });
+            }
             console.log(res);
           });
+        }else{
+          const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "查无此人"),
+                position: "top-left",
+                type: "warning",
+              });
         }
       });
     },
@@ -538,24 +667,67 @@ export default {
           sc = 7;
           break;
       }
+      if(this.name4 == '' || this.name4 == null){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "名字不能为空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
+      if(this.input1111 == '' || this.input2222 == '' || this.input3333 =='',
+      this.input4444 == '' || this.input5555 == '' || this.input6666 == ''){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "成绩框不能有空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
       instance.post("/foneuserinfobyname", this.name4).then((res) => {
         console.log(res.data);
         if (res.data.userInfo.name != "" || res.data.userInfo.name != null) {
-          this.RqObject.scores.push(Number(this.input1111))
-          this.RqObject.scores.push(Number(this.input2222))
-          this.RqObject.scores.push(Number(this.input3333))
-          this.RqObject.scores.push(Number(this.input4444))
-          this.RqObject.scores.push(Number(this.input5555))
-          this.RqObject.scores.push(Number(this.input6666))
+          this.RqObject.scores.push(Number(this.input1111));
+          this.RqObject.scores.push(Number(this.input2222));
+          this.RqObject.scores.push(Number(this.input3333));
+          this.RqObject.scores.push(Number(this.input4444));
+          this.RqObject.scores.push(Number(this.input5555));
+          this.RqObject.scores.push(Number(this.input6666));
           this.RqObject.sc = sc;
           this.RqObject.name = this.name4;
-          console.log(this.RqObject)
-          instance.post(
-            "/insertm",
-            this.RqObject
-          ).then(res=>{
+          console.log(this.RqObject);
+          instance.post("/insertm", this.RqObject).then((res) => {
+             if (res.data.status == 200) {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入成功"),
+                position: "top-left",
+                type: "success",
+              });
+            } else {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入失败"),
+                position: "top-left",
+                type: "warning",
+              });
+            }
             console.log(res);
           });
+        }else{
+          const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "查无此人"),
+                position: "top-left",
+                type: "warning",
+              });
         }
       });
     },
@@ -588,24 +760,67 @@ export default {
           sc = 7;
           break;
       }
+      if(this.name5 == '' || this.name5 == null){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "名字不能为空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
+      if(this.input11111 == '' || this.input22222 == '' || this.input33333 =='',
+      this.input44444 == '' || this.input55555 == '' || this.input66666 == ''){
+        const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "成绩框不能有空"),
+                position: "top-left",
+                type: "warning",
+              });
+              return;
+      }
       instance.post("/foneuserinfobyname", this.name5).then((res) => {
         console.log(res.data);
         if (res.data.userInfo.name != "" || res.data.userInfo.name != null) {
-          this.RqObject.scores.push(Number(this.input11111))
-          this.RqObject.scores.push(Number(this.input22222))
-          this.RqObject.scores.push(Number(this.input33333))
-          this.RqObject.scores.push(Number(this.input44444))
-          this.RqObject.scores.push(Number(this.input55555))
-          this.RqObject.scores.push(Number(this.input66666))
+          this.RqObject.scores.push(Number(this.input11111));
+          this.RqObject.scores.push(Number(this.input22222));
+          this.RqObject.scores.push(Number(this.input33333));
+          this.RqObject.scores.push(Number(this.input44444));
+          this.RqObject.scores.push(Number(this.input55555));
+          this.RqObject.scores.push(Number(this.input66666));
           this.RqObject.sc = sc;
           this.RqObject.name = this.name5;
-          console.log(this.RqObject)
-          instance.post(
-            "/insertm",
-            this.RqObject
-          ).then(res=>{
+          console.log(this.RqObject);
+          instance.post("/insertm", this.RqObject).then((res) => {
+             if (res.data.status == 200) {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入成功"),
+                position: "top-left",
+                type: "success",
+              });
+            } else {
+              const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "录入失败"),
+                position: "top-left",
+                type: "warning",
+              });
+            }
             console.log(res);
           });
+        }else{
+          const h = this.$createElement;
+              this.$notify({
+                title: "录入",
+                message: h("i", { style: "color: teal" }, "查无此人"),
+                position: "top-left",
+                type: "warning",
+              });
         }
       });
     },
