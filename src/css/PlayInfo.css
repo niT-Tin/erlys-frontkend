@@ -25,10 +25,19 @@
 
 .btn21{
     position: relative;
+    height: 25px;
     top: -2px;
 }
 
 .btn22{
+    left: -10px;
     position: relative;
-    /* width: 50px; */
+    height: 25px;
+    width: 80px;
+}
+
+.add{
+    position: relative;
+    right: -795px;
+    /* width: px; */
 }
