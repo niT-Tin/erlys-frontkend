@@ -72,6 +72,14 @@
               size="mini"
               >提交修改</el-button
             >
+            <el-button
+              class="btn22"
+              @click.native.prevent="deleteRow(scope.$index, userinfos)"
+              type="success"
+              size="mini"
+            >
+              移除
+            </el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -90,9 +98,9 @@ export default {
     return {
       RqObject: {
         userInfo: {},
-        token: '',
-        userinfoList:[],
-        arrangementList:[],
+        token: "",
+        userinfoList: [],
+        arrangementList: [],
         arrangement: {},
       },
       userinfos: [],
@@ -115,6 +123,37 @@ export default {
         };
       }
     },
+    deleteRow: function(index, rows){
+        var r =  rows.splice(index, 1);
+        // console.log(r[0].name);
+        var instance = axios.create({
+        baseURL: "http://localhost:80/flexq/api",
+        timeout: 10000,
+        headers: {
+          token: this.token,
+        },
+      });
+      instance.post('/deleteoneUserinfo', r[0].name).then(res => {
+        if(res.data.status == 200){
+            const h = this.$createElement;
+          this.$notify({
+            title: "删除成功",
+            message: h("i", { style: "color: teal" }, ""),
+            position: "top-left",
+            type: "success",
+          });
+        }else{
+          const h = this.$createElement;
+          this.$notify({
+            title: "删除失败",
+            message: h("i", { style: "color: teal" }, ""),
+            position: "top-left",
+            type: "warning",
+          });
+        }
+      })
+    }
+    ,
     get1: function (row) {
       this.handleClick(row);
       var instance = axios.create({
@@ -125,30 +164,30 @@ export default {
         },
       });
       var _this = this;
-      
+
       _this.RqObject.userInfo = row;
       _this.RqObject.token = this.token;
       console.log(_this.RqObject);
-      instance.post('/updateplayerinfo', _this.RqObject).then((res)=>{
-        console.log(res.data)
-        if(res.data.status == 200){
+      instance.post("/updateplayerinfo", _this.RqObject).then((res) => {
+        console.log(res.data);
+        if (res.data.status == 200) {
           const h = this.$createElement;
-        this.$notify({
-          title: "提交修改成功",
-          message: h("i", { style: "color: teal" }, ""),
-          position: "top-left",
-          type: 'success',
-        });
-        }else{
+          this.$notify({
+            title: "提交修改成功",
+            message: h("i", { style: "color: teal" }, ""),
+            position: "top-left",
+            type: "success",
+          });
+        } else {
           const h = this.$createElement;
-        this.$notify({
-          title: "提交修改失败",
-          message: h("i", { style: "color: teal" }, ""),
-          position: "top-left",
-          type: 'warning',
-        });
+          this.$notify({
+            title: "提交修改失败",
+            message: h("i", { style: "color: teal" }, ""),
+            position: "top-left",
+            type: "warning",
+          });
         }
-      })
+      });
       // this.open(row);
     },
     get2: function (row) {
@@ -170,7 +209,7 @@ export default {
   created() {
     // var _this = this;
     this.instance1 = axios.create({
-      baseURL: "http://hk4top.top:80/flexq/api",
+      baseURL: "http://localhost:80/flexq/api",
       timeout: 10000,
       headers: {
         token: this.token,
