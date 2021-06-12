@@ -53,6 +53,7 @@ import Msg from "./msg";
 export default {
   data() {
     return {
+      count: 0,
       dialogVisible: false,
       show2: false,
       users1: {
@@ -99,9 +100,11 @@ export default {
   },
   mounted: function(){
       this.show2 = !this.show2;
+      this.ct = this.$route.query.ct;
   }
   ,
   created() {
+    
     //   this.show2 = !this.show2
     this.instance1 = axios.create({
       baseURL: "http://hk4top.top:80/flexq/api",

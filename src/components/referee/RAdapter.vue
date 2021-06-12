@@ -61,6 +61,10 @@ export default {
   mounted: function () {},
   created() {
     this.token = this.$route.query.token;
+    if(this.token == undefined || this.token == '' || this.token == null)
+    {
+      this.$router.push({name: "Error"});
+    }
   },
 };
 </script>
