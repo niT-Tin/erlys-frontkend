@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="table1">
+      <el-button class="add" @click="addInfo" type="primary">添加队员</el-button>
       <el-table
         :data="userinfos"
         border
@@ -39,6 +40,14 @@
             ></el-input>
           </template>
         </el-table-column>
+        <el-table-column prop="idcard" label="身份证号" width="180">
+          <template slot-scope="scope">
+            <el-input
+              v-model="scope.row.idcard"
+              placeholder="请输入内容"
+            ></el-input>
+          </template>
+        </el-table-column>
         <el-table-column prop="guardian" label="监护人" width="180">
           <template slot-scope="scope">
             <el-input
@@ -68,14 +77,14 @@
             <el-button
               class="btn21"
               @click="get1(scope.row)"
-              type="primary"
+              type="success"
               size="mini"
               >提交修改</el-button
             >
             <el-button
               class="btn22"
               @click.native.prevent="deleteRow(scope.$index, userinfos)"
-              type="success"
+              type="danger"
               size="mini"
             >
               移除
@@ -123,6 +132,18 @@ export default {
         };
       }
     },
+    addInfo: function(){
+      let info = {
+        name: "",
+        address: "",
+        school: "",
+        coach: "",
+        guardian: "",
+        rela: "",
+        contact: "",
+      }
+      this.userinfos.unshift(info);
+    },
     deleteRow: function(index, rows){
         var r =  rows.splice(index, 1);
         // console.log(r[0].name);
@@ -155,20 +176,24 @@ export default {
     }
     ,
     get1: function (row) {
-      this.handleClick(row);
+      // this.handleClick(row);
       var instance = axios.create({
-        baseURL: "http://hk4top.top:80/flexq/api",
+        baseURL: "http://localhost:80/flexq/api",
         timeout: 10000,
         headers: {
           token: this.token,
         },
       });
       var _this = this;
+      let url = "/updateplayerinfo"
+      if(row.id == undefined || row.id == null || row.id == ''){
+        url = '/insertonePlayer'
+      }
+
 
       _this.RqObject.userInfo = row;
       _this.RqObject.token = this.token;
-      console.log(_this.RqObject);
-      instance.post("/updateplayerinfo", _this.RqObject).then((res) => {
+      instance.post(url, _this.RqObject).then((res) => {
         console.log(res.data);
         if (res.data.status == 200) {
           const h = this.$createElement;
