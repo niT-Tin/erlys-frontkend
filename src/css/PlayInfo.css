@@ -25,5 +25,10 @@
 
 .btn21{
     position: relative;
-    left: px;
+    top: -2px;
+}
+
+.btn22{
+    position: relative;
+    /* width: 50px; */
 }
