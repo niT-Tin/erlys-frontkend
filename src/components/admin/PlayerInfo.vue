@@ -241,6 +241,12 @@ export default {
       },
     });
     console.log(this.token);
+
+    // this.instance1.get('/selectscorelist').then(res => {
+    //     console.log(res.data)
+    //     console.log("在得到排名列表")
+    // })
+
     this.instance1
       .get("/getallplayerinfo")
       .then((result) => {
