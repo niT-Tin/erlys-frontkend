@@ -61,6 +61,11 @@ export default new Router({
       path: '/error',
       name: 'Error',
       component: Errors => require(['@/components/Error'], Errors)
-    }
+    },
+    {
+      path: '/sign',
+      name: 'Sign',
+      component: Signs => require(['@/components/SignUp'], Signs)
+    },
   ]
 })
