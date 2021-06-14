@@ -118,7 +118,7 @@ export default {
   props: ["token"],
   methods: {
     tableDbEdit(row, column, cell, event) {
-      console.log(row, column, cell, event);
+      // console.log(row, column, cell, event);
       if (column.label != "顺序") {
         event.target.innerHTML = "";
         let cellInput = document.createElement("input");
@@ -148,7 +148,7 @@ export default {
         var r =  rows.splice(index, 1);
         // console.log(r[0].name);
         var instance = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
+        baseURL: "http://hk4top.top:80/flexq/api",
         timeout: 10000,
         headers: {
           token: this.token,
@@ -178,7 +178,7 @@ export default {
     get1: function (row) {
       // this.handleClick(row);
       var instance = axios.create({
-        baseURL: "http://localhost:80/flexq/api",
+        baseURL: "http://hk4top.top:80/flexq/api",
         timeout: 10000,
         headers: {
           token: this.token,
@@ -194,7 +194,7 @@ export default {
       _this.RqObject.userInfo = row;
       _this.RqObject.token = this.token;
       instance.post(url, _this.RqObject).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.status == 200) {
           const h = this.$createElement;
           this.$notify({
@@ -219,28 +219,28 @@ export default {
       this.changeData(row);
     },
     get3: function (row, column, event) {
-      console.log(row.isSet);
+      // console.log(row.isSet);
     },
     handleClick(row) {
-      console.log(row);
-      console.log(row.name);
+      // console.log(row);
+      // console.log(row.name);
     },
     getData: function () {},
     changeData: function (row) {
-      console.log(row);
-      console.log("获取数据");
+      // console.log(row);
+      // console.log("获取数据");
     },
   },
   created() {
     // var _this = this;
     this.instance1 = axios.create({
-      baseURL: "http://localhost:80/flexq/api",
+      baseURL: "http://hk4top.top:80/flexq/api",
       timeout: 10000,
       headers: {
         token: this.token,
       },
     });
-    console.log(this.token);
+    // console.log(this.token);
 
     // this.instance1.get('/selectscorelist').then(res => {
     //     console.log(res.data)
@@ -252,7 +252,7 @@ export default {
       .then((result) => {
         this.userinfos = result.data.userinfoList;
         this.total1 = result.data.length;
-        console.log(result.data);
+        // console.log(result.data);
       })
       .catch((err) => {
         console.log("发生错误");
