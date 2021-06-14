@@ -162,7 +162,7 @@ export default {
         }
        this.activities =  this.activities.slice(0,5)
       });
-      console.log(this.activities);
+      // console.log(this.activities);
       // console.log(this.activities)
   },
   mounted: function () {
@@ -232,7 +232,7 @@ export default {
         position: "top-left",
         type: 'success',
       });
-      console.log(this.count1)
+      // console.log(this.count1)
       let sig ={};
       sig.size = "medium";
       sig.type = "primary";
@@ -257,7 +257,7 @@ export default {
           "Content-Type": "application/json;charset=UTF-8",
         },
       });
-      console.log(this.count);
+      // console.log(this.count);
       _this.count = 0;
       _this.RqObject.token = this.token;
       if (_this.RqObject.arrangementList.length < 1) {
@@ -273,7 +273,7 @@ export default {
       _this.RqObject.arrangementList.reverse();
       // _this.RqObject.arrangementList = list;
       this.activities.reverse();
-      console.log(_this.RqObject);
+      // console.log(_this.RqObject);
       _this.instance1
         .post("/setarrangement", _this.RqObject)
         .then((result) => {
@@ -285,12 +285,12 @@ export default {
             type: 'success',
           });
 
-          console.log(result.data);
+          // console.log(result.data);
         })
         .catch((err) => {
           console.log("发生错误");
         });
-      console.log(this.token);
+      // console.log(this.token);
       _this.RqObject.arrangementList = [];
     },
     forMateDate: function (dates) {
