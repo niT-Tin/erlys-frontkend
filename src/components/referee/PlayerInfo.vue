@@ -1,5 +1,8 @@
 <template>
   <div class="table1">
+    <el-button class="exportBtn" @click="getGrade" type="primary"
+      >取得成绩表</el-button
+    >
     <el-table
       :data="userinfos"
       v-loading="loading"
@@ -20,9 +23,7 @@
       <el-table-column prop="contact" label="联系方式" width="180">
       </el-table-column>
     </el-table>
-    <el-button class="exportBtn" @click="getGrade" type="primary"
-      >取得成绩表</el-button
-    >
+    
   </div>
 </template>
 

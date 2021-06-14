@@ -41,3 +41,8 @@
     right: -795px;
     /* width: px; */
 }
+
+.exportBtn{
+    position: relative;
+    right: -500px;
+}
