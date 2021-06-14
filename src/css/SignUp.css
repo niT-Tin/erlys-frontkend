@@ -1,0 +1,33 @@
+
+.bgk{
+    /* position: absolute; */
+    top: 30px;
+    background-color: #FF9A8B;
+background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+
+    height: 900px;
+    border-radius: 20px;
+}
+.hd{
+    position: absolute;
+    top: -20px;
+    width: 800px;
+    left: 520px;
+}
+
+.images{
+    border-radius: 20px;
+    height: 190px;
+}
+
+.itemss{
+    border-radius: 20px;
+    height: 190px;
+}
+
+.upd{
+    position: relative;
+    top: 300px;
+    width: 500px;
+    right: -650px;
+}
