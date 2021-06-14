@@ -52,7 +52,7 @@ export default {
         }
        this.activities =  this.activities.slice(0,5)
       });
-      console.log(this.activities);
+      // console.log(this.activities);
   },
 };
 </script>
