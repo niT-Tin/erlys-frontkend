@@ -9,3 +9,8 @@
 .fnt{
     font: 50px bold;
 }
+
+.bgk{
+    position: absolute;
+    top: 20px;
+}
