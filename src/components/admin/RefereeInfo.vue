@@ -33,7 +33,7 @@ export default {
       .then((result) => {
         this.userinfos = result.data.userinfoList;
         this.total1 = result.data.length;
-        console.log(this.userinfos);
+        // console.log(this.userinfos);
       })
       .catch((err) => {
         console.log("发生错误");
